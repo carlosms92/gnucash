@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'tfg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbtfg',
-	'USER': 'root',
-	'PASSWORD': 'tfg',
+        'NAME': 'gnucash    ',
+	'USER': 'gnucash',
+	'PASSWORD': 'tfg15',
 	'HOST': '',
 	'PORT': '',
     }
