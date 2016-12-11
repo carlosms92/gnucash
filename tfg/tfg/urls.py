@@ -18,6 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'apptfg.views.home', name='home'),
+    url(r'^$', 'gnucash.views.home', name='home'),
+    url(r'^asiento_nuevo.html$','gnucash.views.listaCuentas'),
+    url(r'^asiento_nuevo_ture.html$','gnucash.views.guardar_asiento')
 
 ]

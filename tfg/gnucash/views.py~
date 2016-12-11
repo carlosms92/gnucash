@@ -1,0 +1,16 @@
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+from gnucash.models import *
+from django.http import HttpResponseRedirect
+
+
+# Create your views here.
+
+def home(request):
+	print("patata")
+	return render_to_response('index.html')
+
+def listaCuentas(request):
+	cuentas=[1,2,3]#Accounts.objets.all()
+        print "patata"
+	return render_to_response('index.html',{'cuentas': cuentas })

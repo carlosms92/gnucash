@@ -1,9 +1,18 @@
-<!DOCTYPE html>
+{% extends "template.html"}
+
+{% block titulo %} Lista de opciones {% endblock titulo}
+
+{% block contenido %}
+	<a href="asiento_nuevo.html">Formulario de asiento nuevo</a>
+{% endblok contenido}
+
+
+<!-- <!DOCTYPE html>
 <html>
 	<head>
 		<title>Formulario asiento</title>
 	</head>
-	<h1> Formulario asiento nuevo (apptfg)</h1>
+	<h1> Formulario asiento nuevo (gnucash)</h1>
 	<body>
 		Fecha <input type="text" name="fecha" /> <br/>
 		N&uacute;m <input type="text" name="num" /> <br/>
@@ -13,6 +22,8 @@
 		{% for cuenta in cuentas %}
 			<option value={{ cuenta.guid }}>{{ cuenta.name }}
 			</option>
+			{% empty %}
+			No se han encontrado cuentas.
 		{% endfor %}
 		</select>
 		Cuenta destino <input type="text" name="destino" /> <br/>

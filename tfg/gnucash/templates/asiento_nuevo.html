@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+
+{% block titulo %} Nuevo Asiento {% endblock titulo %}
+
+{% block contenido %}
+<form action="asiento_nuevo_ture.html" method="POST" id="FormularioAsiento">{% csrf_token %}
+	Fecha <input type="text" name="fecha" />
+	N&uacute;m <input type="text" name="num" /> <br/>
+	Descripci&oacute;n <textarea name="descripcion" form="FormularioAsiento"> </textarea> <br/>
+	Cuenta origen: 
+	<select name="origen">
+	{% for cuenta in cuentas %}
+		<option value="{{ cuenta.guid }}">{{ cuenta.name }}
+		</option>
+		{% empty %}
+		<option>No se han encontrado cuentas.</option>
+	{% endfor %}
+	</select>
+	Cuenta destino <select name="destino">
+	{% for cuenta in cuentas %}
+		<option value="{{ cuenta.guid }}">{{ cuenta.name }}
+		</option>
+		{% empty %}
+		<option>No se han encontrado cuentas.</option>
+	{% endfor %}
+	</select>
+	<br/>
+	R ? <input type="text" name="r" />
+	Importe <input type="text" name="importe" />
+	<br />
+	<input type="submit" value="Enviar" />
+</form>
+{% endblock contenido %}
